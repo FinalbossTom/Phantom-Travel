@@ -1,0 +1,3 @@
+execute as @e[type=minecraft:phantom,tag=ENTITY_FLAG_WAYPOINT_MOVEMENT,distance=..1,limit=1,sort=nearest] if entity @a[distance=..1.6,limit=1,sort=nearest] at @s run scoreboard players set @s moving 1
+execute as @e[type=minecraft:phantom,tag=ENTITY_FLAG_WAYPOINT_MOVEMENT,distance=..1,limit=1,sort=nearest] if entity @a[distance=..1.6,limit=1,sort=nearest] at @s run function travel:waypoints/get_waypoint_target
+ 

@@ -1,0 +1,7 @@
+#setup `TRACK_N`,`WAYPOINT_N` to match desired route and waypoint
+summon minecraft:phantom ~ ~ ~ {DeathLootTable:"minecraft:empty",NoAI:1b,Health:2f,Size:8,Tags:["ENTITY_FLAG_WAYPOINT_MOVEMENT"],Passengers:[{id:"minecraft:pig",Silent:1b,FallDistance:200f,DeathLootTable:"minecraft:empty",Health:1f,Saddle:1b,CustomName:'{"text":"TravelSaddle"}',ActiveEffects:[{Id:14b,Amplifier:1b,Duration:99999,ShowParticles:0b}],Attributes:[{Name:generic.maxHealth,Base:1},{Name:generic.movementSpeed,Base:0}]}],CustomName:'{"text":"TravelPhantom"}',ActiveEffects:[{Id:10b,Amplifier:1b,Duration:9999,ShowParticles:0b}],Attributes:[{Name:generic.maxHealth,Base:2}]}
+#entity `path_id` must match the aec's path_id so it goes on that path
+scoreboard players set @e[type=minecraft:phantom,tag=ENTITY_FLAG_WAYPOINT_MOVEMENT,distance=0..12,limit=1] path_id 0
+scoreboard players set @e[type=minecraft:phantom,tag=ENTITY_FLAG_WAYPOINT_MOVEMENT,distance=0..12,limit=1] waypoint_id 0
+scoreboard players set @e[type=minecraft:phantom,tag=ENTITY_FLAG_WAYPOINT_MOVEMENT,distance=0..12,limit=1] moving 0
+execute as @e[type=minecraft:phantom,tag=ENTITY_FLAG_WAYPOINT_MOVEMENT,distance=..12,limit=1,sort=nearest] at @s run function travel:waypoints/get_waypoint_target

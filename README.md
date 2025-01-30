@@ -1,4 +1,4 @@
-# mcdata-phantrels
+# Phantom Travel | short: Phantrels
 A Minecraft Datapack, that allows for travelling on set routes with phantoms.
 
 Nothing too special, it's a datapack that can be used by running the "Movementmaster" function in a commandblock.
